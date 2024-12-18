@@ -1,20 +1,16 @@
 import numpy
 
 frame = numpy.array([[0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 1, 1, 1, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0]])
+					[0, 1, 1, 1, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0, 0, 0],
+					[0, 0, 0, 1, 1, 1, 0],
+					[0, 0, 0, 0, 0, 0, 0]])
 
 def compute_number_neighbors(paded_frame, index_line, index_column):
-    number_neighbors=0
-    """
-    Cette fonction prend en entrée la matrice avec bordure et
-    renvoie le nombre de cellules voisines vivantes.
-    """
-    return number_neighbors
+    return numpy.sum(paded_frame[index_line-1:index_line+2, index_column-1:index_column+2]) - paded_frame[index_line, index_column]
+
 
 def compute_next_frame(frame):
     """
